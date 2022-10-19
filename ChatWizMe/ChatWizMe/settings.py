@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
     'chatbox',
     'django.contrib.admin',
     'django.contrib.auth',
