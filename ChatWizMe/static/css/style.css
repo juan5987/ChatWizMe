@@ -1,5 +1,26 @@
+<<<<<<< Updated upstream
 .chatboxMainTitle{
     color: red;
+=======
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Permanent+Marker&family=Roboto&family=Satisfy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
+    background-image: url("../images/bg4.jpg");
+    background-size: 1000px;
+>>>>>>> Stashed changes
 }
 
 /* HEADER */

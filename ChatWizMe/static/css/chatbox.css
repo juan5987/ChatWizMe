@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Permanent+Marker&family=Roboto&family=Satisfy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.chatbox_title{
+    text-align: center;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-family: "Permanent Marker", sans-serif;
+    font-size: 2.5rem;
+    color: #ff7300;
+    text-shadow: 2px 2px 2px black;
+}
+
+.chatbox_block{
+    background-color: #0B3142;
+    padding: 1rem;
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 15px;
+}
+
+.chatbox_container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 3px solid #ff7300;
+    background-color: #e8f1f8;
+    overflow-y: scroll;
+    scrollbar-color: #ff7300 aliceblue;
+    height: 420px;
+}
+
+.chatbox_message{
+    min-width: min-content;
+    max-width: 350px;
+    color: white;
+    padding: 0 1rem;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    font-family: "Roboto";
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox_message_container_left{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chatbox_message_container_right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-msg{
+    background-color: #0B3142;
+}
+
+.bot-msg{
+    background-color: #ff7300;
+}
+
+.chatbox_form{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbox_input{
+    font-family: "Roboto";
+    font-weight: lighter;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    margin-right: 1rem;
+    color: black;
+    outline: none;
+    border: 2px solid #0B3142;
+    flex-grow: 1;
+    height: 8rem;
+    resize: none;
+    border-radius: 15px;
+    border: 3px solid #ff7300;
+    background-color: #f7f4f8
+}
+
+.chatbox_input::placeholder{
+    font-family: "Permanent Marker";
+}
+
+.chatbox_submit{
+    font-size: 1.5rem;
+    font-family: "Permanent Marker";
+    padding: 0 1.5rem;
+    border: none;
+    background-color: #ff7300;
+    color: white;
+    border: 2px solid white;
+    height: 3rem;
+    border-radius: 2.25rem;
+    line-height: ;
+}
+
+.chatbox_submit:hover{
+    background-color: white;
+    color: #ff7300;
+    cursor: pointer;
+    border: 2px solid #ff7300;
+}
+
+.chatbox_message_time{
+    font-size: .75rem;
+    text-align: right;
+    font-family: serif;
+}
