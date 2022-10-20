@@ -120,7 +120,13 @@
 }
 
 .chatbox_message_time{
-    font-size: .75rem;
+    font-size: .6rem;
     text-align: right;
     font-family: serif;
+    position: relative;
+    top: 1.5rem;
+    left: 10px;
+    color: black;
+    font-family: 'Roboto';
+    font-weight: bold;
 }
