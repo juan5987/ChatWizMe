@@ -5,7 +5,24 @@
     <h1 class="chatbox_title">Chatbox</h1>
 
 <div class="chatbox_container">
-    {% for message in user_messages  %}
+
+    {% for index, message in user_messages %}
+    {% if user_messages : %}
+    <div class="chatbox_message_container_left">
+        <span class="chatbox_message user-msg">{{user_messages[index]}}
+            <span class="chatbox_message_time">13:37</span>
+        </span>
+    </div>
+    <div class="chatbox_message_container_right">
+        <span class="chatbox_message bot-msg">{{bot_messages[index]}}
+            <span class="chatbox_message_time">13:38</span>
+        </span>
+    </div>
+    {% endif %}
+
+    {% endfor %}
+
+    {% comment %} {% for message in user_messages  %}
         <div class="chatbox_message_container_left">
             <span class="chatbox_message user-msg">{{message}}
                 <span class="chatbox_message_time">13:37</span>
@@ -13,11 +30,13 @@
         </div>
     {% endfor %}
 
-{% comment %} <div class="chatbox_message_container_right">
-        <span class="chatbox_message bot-msg">Pip is a package manager.
-            <span class="chatbox_message_time">13:38</span>
-        </span>
-    </div> {% endcomment %}
+    {% for message in bot_messages  %}
+        <div class="chatbox_message_container_right">
+            <span class="chatbox_message bot-msg">{{message}}
+                <span class="chatbox_message_time">13:38</span>
+            </span>
+        </div>
+    {% endfor %} {% endcomment %}
 </div>
 <form method="POST" class="form">
     {% csrf_token %}
