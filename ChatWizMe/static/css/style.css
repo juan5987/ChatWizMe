@@ -57,3 +57,5 @@ footer{
 
 .footer_img{
 }
+
+{{ navbar.render }}
