@@ -1,57 +1,29 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
 <div class="chatbox_block">
     <h1 class="chatbox_title">Chatbox</h1>
 
 <div class="chatbox_container">
-    <div class="chatbox_message_container_left">
-        <span class="chatbox_message user-msg">What is Pip ?
-            <span class="chatbox_message_time">13:37</span>
-        </span>
-    </div>
-    <div class="chatbox_message_container_right">
+    {% for message in user_messages  %}
+        <div class="chatbox_message_container_left">
+            <span class="chatbox_message user-msg">{{message}}
+                <span class="chatbox_message_time">13:37</span>
+            </span>
+        </div>
+    {% endfor %}
+
+{% comment %} <div class="chatbox_message_container_right">
         <span class="chatbox_message bot-msg">Pip is a package manager.
             <span class="chatbox_message_time">13:38</span>
         </span>
-    </div>
-    <div class="chatbox_message_container_left">
-        <span class="chatbox_message user-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quasi earum odit dicta harum perferendis dolor ex iste pariatur blanditiis quidem id quibusdam doloremque labore, veritatis ipsum sit aliquam voluptatibus.
-            <span class="chatbox_message_time">13:40</span>
-        </span>
-
-    </div>
-    <div class="chatbox_message_container_right">
-        <span class="chatbox_message bot-msg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nesciunt animi dolorum mollitia necessitatibus autem ex minus molestias a similique?
-            <span class="chatbox_message_time">13:41</span>
-        </span>
-    </div>
-    <div class="chatbox_message_container_left">
-        <span class="chatbox_message user-msg">What is Pip ?
-            <span class="chatbox_message_time">13:37</span>
-        </span>
-
-    </div>
-    <div class="chatbox_message_container_right">
-        <span class="chatbox_message bot-msg">Pip is a package manager.
-            <span class="chatbox_message_time">13:38</span>
-        </span>
-    </div>
-    <div class="chatbox_message_container_left">
-        <span class="chatbox_message user-msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. In quasi earum odit dicta harum perferendis dolor ex iste pariatur blanditiis quidem id quibusdam doloremque labore, veritatis ipsum sit aliquam voluptatibus.
-            <span class="chatbox_message_time">13:40</span>
-        </span>
-
-    </div>
-    <div class="chatbox_message_container_right">
-        <span class="chatbox_message bot-msg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis nesciunt animi dolorum mollitia necessitatibus autem ex minus molestias a similique?
-            <span class="chatbox_message_time">13h41</span>
-        </span>
-    </div>
+    </div> {% endcomment %}
 </div>
-<form class="chatbox_form">
-    <textarea class="chatbox_input" type="text" placeholder="Type your text here..."></textarea>
-    <button class="chatbox_submit">Envoyer</button>
+<form method="POST" class="form">
+    {% csrf_token %}
+
+    {{form}}
+    <button type="submit" class="chatbox_submit">Submit</button>
 </form>
 </div>
 {% endblock content %}

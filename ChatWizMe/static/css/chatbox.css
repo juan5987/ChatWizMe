@@ -10,7 +10,7 @@
     margin-bottom: 1rem;
     text-transform: uppercase;
     font-family: "Permanent Marker", sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #ff7300;
     text-shadow: 2px 2px 2px black;
 }
@@ -34,7 +34,7 @@
     background-color: #e8f1f8;
     overflow-y: scroll;
     scrollbar-color: #ff7300 aliceblue;
-    height: 420px;
+    height: 400px;
 }
 
 .chatbox_message{
@@ -78,12 +78,24 @@
     align-items: center;
 }
 
-.chatbox_input{
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form > label{
+    color: white;font-weight: bold;
+    margin-top: 1rem;
+
+}
+
+#id_text_msg{
     font-family: "Roboto";
     font-weight: lighter;
     font-size: 1.5rem;
     padding: .5rem 1rem;
     margin-right: 1rem;
+    margin-top: .25rem;
     color: black;
     outline: none;
     border: 2px solid #0B3142;
@@ -109,7 +121,9 @@
     border: 2px solid white;
     height: 3rem;
     border-radius: 2.25rem;
-    line-height: ;
+    width: min-content;
+    margin: 0 auto;
+    margin-top: 1rem;
 }
 
 .chatbox_submit:hover{
@@ -129,4 +143,8 @@
     color: black;
     font-family: 'Roboto';
     font-weight: bold;
+}
+
+.errorlist{
+    display: none;
 }
