@@ -12,6 +12,9 @@ openai.api_key = SECRET_KEY
 user_messages = []
 bot_messages = []
 
+messages = {}
+
+
 def chatbox(request):
     form = forms.InputForm(request.POST or None)
     
@@ -32,9 +35,10 @@ def chatbox(request):
                 stop=[" Human:", " AI:"]
                 )
             bot_messages.append(response['choices'][0]['text'])
+            messages[new_msg] = response['choices'][0]['text']
             form.save()
             form = forms.InputForm()
-            return render(request, "chatbox/chatbox.html", {'form': form, 'user_messages': user_messages, 'bot_messages': bot_messages})
+            return render(request, "chatbox/chatbox.html", {'form': form, 'user_messages': user_messages, 'bot_messages': bot_messages, 'messages':messages})
         
         else:
             return render(request, "chatbox/chatbox.html", {'form': form})
