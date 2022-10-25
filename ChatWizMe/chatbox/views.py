@@ -37,7 +37,7 @@ def chatbox(request):
                 stop=[" Human:", " AI:"]
                 )
             bot_messages.append(response['choices'][0]['text'])
-            time = datetime.today().utcnow().strftime('%H:%M')            
+            time = datetime.today().strftime('%H:%M')            
             messages[user_messages[len(user_messages) - 1]] = bot_messages[len(bot_messages) - 1]
             return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
         
