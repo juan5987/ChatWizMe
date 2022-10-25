@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from . import models
 from . import forms
 import os
+from datetime import datetime
 import openai
 from dotenv import load_dotenv
 
@@ -28,7 +28,7 @@ def chatbox(request):
             form = forms.InputForm()
             response = openai.Completion.create(
                 model="text-davinci-002",
-                prompt=f"The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: {user_messages[len(user_messages) - 1]}\nAI: ",
+                prompt=f"\n\nHuman: {user_messages[len(user_messages) - 1]}\nAI: ",
                 temperature=0.9,
                 max_tokens=150,
                 top_p=1,
@@ -37,8 +37,9 @@ def chatbox(request):
                 stop=[" Human:", " AI:"]
                 )
             bot_messages.append(response['choices'][0]['text'])
+            time = datetime.today().utcnow().strftime('%H:%M')            
             messages[user_messages[len(user_messages) - 1]] = bot_messages[len(bot_messages) - 1]
-            return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages})
+            return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
         
         else:
             return render(request, "chatbox/chatbox.html", {'form': form})

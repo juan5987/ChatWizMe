@@ -1,13 +1,5 @@
-// const chatboxForm = document.querySelector('.chatbox_form');
-// chatboxForm.addEventListener('submit', (e) => {
-//     e.preventDefault()
-// })
+const container = document.querySelector('.chatbox_container');
 
-const chatboxForm = document.querySelector('.form');
-
-// window.addEventListener('DOMContentLoaded', () => {
-//     chatboxForm.addEventListener('submit', (e) => {
-//         e.preventDefault()
-//         chatboxForm.scrollHeight
-//     })
-// })
+window.addEventListener('DOMContentLoaded', () => {
+    container.scrollTop = container.scrollHeight
+})

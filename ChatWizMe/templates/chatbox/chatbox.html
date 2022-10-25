@@ -8,19 +8,18 @@
     {% for key, value in messages.items %}
         <div class="chatbox_message_container_left">
             <span class="chatbox_message user-msg">{{key}}
-                <span class="chatbox_message_time">13:37</span>
+                <span class="chatbox_message_time">{{time}}</span>
             </span>
         </div>
         <div class="chatbox_message_container_right">
             <span class="chatbox_message bot-msg">{{value}}
-                <span class="chatbox_message_time">13:38</span>
+                <span class="chatbox_message_time">{{time}}</span>
             </span>
         </div>
         {% endfor %}
 </div>
 <form method="POST" class="form">
     {% csrf_token %}
-
     {{form}}
     <button type="submit" class="chatbox_submit">Submit</button>
 </form>
