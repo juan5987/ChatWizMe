@@ -53,6 +53,10 @@
     flex-direction: column;
 }
 
+.test {
+    margin-bottom: 1rem;
+}
+
 .chatbox_message_container_left{
     display: flex;
     justify-content: flex-start;
