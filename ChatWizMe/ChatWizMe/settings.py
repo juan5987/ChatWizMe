@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'rapport',
     'home',
     'chatbox',
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

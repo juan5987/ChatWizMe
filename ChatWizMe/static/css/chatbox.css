@@ -5,6 +5,19 @@
     padding: 0;
 }
 
+.chatbox{
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('../images/human_hand.png'), url('../images/robot_hand.png');
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    background-size: 450px;
+    background-color: rgb(180, 236, 255);
+}
+
 .chatbox_title{
     text-align: center;
     margin-bottom: 1rem;
@@ -20,7 +33,6 @@
     padding: 1rem;
     width: 1000px;
     margin: 0 auto;
-    margin-top: 1rem;
     border-radius: 15px;
 }
 
@@ -31,7 +43,7 @@
     padding: 2rem;
     border-radius: 15px;
     border: 3px solid #ff7300;
-    background-color: #e8f1f8;
+    background-color: #daeaf8;
     overflow-y: scroll;
     scrollbar-color: #ff7300 aliceblue;
     height: 400px;
@@ -93,13 +105,18 @@
 
 }
 
-#id_text_msg{
+.chatbox_bottom{
+    display: flex;
+    align-items: center;
+}
+
+.chatbox_input{
     font-family: "Roboto";
     font-weight: lighter;
     font-size: 1.5rem;
     padding: .5rem 1rem;
     margin-right: 1rem;
-    margin-top: .25rem;
+    margin-top: 1rem;
     color: black;
     outline: none;
     border: 2px solid #0B3142;
@@ -108,7 +125,7 @@
     resize: none;
     border-radius: 15px;
     border: 3px solid #ff7300;
-    background-color: #f7f4f8
+    background-color: #fff4ec;
 }
 
 .chatbox_input::placeholder{
