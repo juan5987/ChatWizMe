@@ -91,15 +91,16 @@ def chatbox(request):
                 presence_penalty=0.0
                 )
         
-        normalized_user_message = user_msg
+        normalized_user_message = user_msg.replace(" ", "").replace(",", "").lower()
         normalized_bot_message = response['choices'][0]['text'].replace(" ", "").replace(",", "").lower()[2:]
         print(normalized_user_message, normalized_bot_message)
+        form = forms.InputForm()
         
         if normalized_user_message == normalized_bot_message:
                 
             response = openai.Completion.create(
                 model="text-davinci-002",
-                prompt=f"You: {form.cleaned_data['text_msg']}\nFriend:",
+                prompt=f"You: {user_msg}\nFriend:",
                 temperature=0.5,
                 max_tokens=600,
                 top_p=1.0,
@@ -107,15 +108,13 @@ def chatbox(request):
                 presence_penalty=0.0,
                 stop=["You:"]
                 )
-            messages.append({form.cleaned_data['text_msg']: response['choices'][0]['text']})
-            form = forms.InputForm()
+            messages.append({'': response['choices'][0]['text']})
             return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
 
         else:
             messages.append({"" : "Your sentence is incorrect. It should be as follow:"})
             messages.append({"" : response['choices'][0]['text']})
             messages.append({"" : "Try to write it again to improve your skill."})
-            form = forms.InputForm()
             return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
 
     else:

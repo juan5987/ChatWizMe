@@ -8,60 +8,23 @@
 
     <div class="chatbox_container">
         {% for message in messages  %}
-        {% for key, value in message.items %}
-        {% if  key%}
-            <div class="chatbox_message_container_left">
-                <span class="chatbox_message user-msg">{{key}}
-                    <span class="chatbox_message_time">{{time}}</span>
-                </span>
-            </div>
-        {% endif %}
-        {% if value %}
-            <div class="chatbox_message_container_right">
-                <span class="chatbox_message bot-msg">{{value}}
-                    <span class="chatbox_message_time">{{time}}</span>
-                </span>
-            </div>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-
-
-
-
-
-        {% comment %} {% for key, value in messages.items %}
-            <div class="chatbox_message_container_left">
-                <span class="chatbox_message user-msg">{{key}}
-                    <span class="chatbox_message_time">{{time}}</span>
-                </span>
-            </div>
-            {% if value %}
-            <div class="chatbox_message_container_right">
-                <span class="chatbox_message bot-msg">{{value|linebreaks}}
-                    <span class="chatbox_message_time">{{time}}</span>
-                </span>
-            </div>
-            {% elif correction%}
-                <div class="chatbox_message_container_right">
-                    <span class="chatbox_message bot-msg">
-                        {% for element in correction  %}
-                        {% if forloop.counter0 == 1 %}
-                        <p style="margin-bottom: 1rem; font-weight: bolder; padding: .5rem; border-radius: 15px; background-color: #0B3142; text-align: center">                      
-                                {{element}}
-                        </p>
-                        {% else %}
-                        <p style="margin-bottom: 1rem;">                      
-                            {{element}}
-                        </p>
-                        {% endif %}
-                        {% endfor %}
-                    </span>
-                    <span class="chatbox_message_time">{{time}}</span>
-                </div>
-            {% endif %}
+            {% for key, value in message.items %}
+                {% if  key%}
+                    <div class="chatbox_message_container_left">
+                        <span class="chatbox_message user-msg">{{key}}
+                            <span class="chatbox_message_time">{{time}}</span>
+                        </span>
+                    </div>
+                {% endif %}
+                {% if value %}
+                    <div class="chatbox_message_container_right">
+                        <span class="chatbox_message bot-msg">{{value|linebreaks }}
+                            <span class="chatbox_message_time">{{time}}</span>
+                        </span>
+                    </div>
+                {% endif %}
             {% endfor %}
-            {% endcomment %}
+        {% endfor %}
     </div>
 
     <form method="POST" class="form">
