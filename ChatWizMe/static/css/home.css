@@ -70,14 +70,14 @@ cite {
 }
 
 
-.image{
+.image{ 
     background-color: #ff7300;
     width: 50%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: right;
-}
+} 
 
 .container1{
     background-color: white;
@@ -101,9 +101,9 @@ main{
 }
 
 
-.hauteg{
+.gauche{
  width:70%;
 }
-.droiteh{
+.droite{
   width:30%;
 }
