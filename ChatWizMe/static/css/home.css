@@ -49,6 +49,7 @@ footer{
     padding: 1.2rem;
     display: flex;
     justify-content: flex-end;
+    margin-top: 150px;
 }
 
 .footer_text{
@@ -63,3 +64,46 @@ cite {
 }
 /* test */
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.image{
+    background-color: #ff7300;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.container1{
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+main{
+    display: flex;
+    width: 100vw;
+}
+
+
+
+.btn-first{
+    width: 30px;
+    height: 30px;
+}
+
+
+.hauteg{
+ width:70%;
+}
+.droiteh{
+  width:30%;
+}
