@@ -49,13 +49,10 @@ footer{
     padding: 1.2rem;
     display: flex;
     justify-content: flex-end;
+    margin: 0;
 }
 
 .footer_text{
     margin-right: 1rem;
 }
 
-.footer_img{
-}
-
-{{ navbar.render }}

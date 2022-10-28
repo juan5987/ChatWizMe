@@ -3,40 +3,36 @@
 
 
 {% block content %}
-<main>
+<div class="home">
+    <section class="left">
+        <div class="top">
+            <p class="paragraph">"... If you are willing to work on your English and you are unable to meet any native speaker with whom you can brush up your linguistic capabilities with .. 
+            If you are in need to someone to correct your grammar, vocabulary or spelling mistakes, then ..."</p>
+            <p class="paragraph">Here you can chat with our friendly bot and boost your confidence in interacting in English while improving your grammatical and spelling skills.</p>
+            <p class="paragraph">Welcome on ChatWizMe</p>
+        
+            <figcaption>
+                Citation de 
+                <cite>
+                    <a href="">Twenty twenty-two</a>
+                </cite>
+                par Juan, Zouhair, Saber.
+            </figcaption>
+        </div>
+        <a href="/chatbox" class="start">Let's Chat</a> 
+    </section>
 
-   <section class="gauche">
-       <section class="haut">
-           <div class="container1">
-           <p>"... If you are willing to work on your English and you are unable to meet any native speaker with whom you can brush up your linguistic capabilities with .. 
-               If you are in need to someone to correct your grammar, vocabulary or spelling mistakes, then ..."</p>
-           <p>Here you can chat with our friendly bot and boost your confidence in interacting in English while improving your grammatical and spelling skills.</p>
+    <section class="right">
+        <p class="signup_advice">Sign up to save your conversations in our database</p>
+        <div class="img">        
+            <img class="image"  src="{% static 'images/chatbot.jpg' %}" alt="image d'une chatbox" />
+        </div>
 
-           <p>WELCOME TO OUR WEBSITE</p>
+        <div class="buttons">
+            <button class="button">Signup</button>
+            <button class="button">Login</button>
+        </div>
 
-           <figcaption>Citation de <cite><a href="">Twenty twenty-two</a></cite> par Juan, Zouhair, Saber.</figcaption>
-       </div></section>
-
-       
-
-   
-
-   <section class="droite">
-       <section class="droite1">        
-           <div class="image"> 
-           <img src="{% static 'chatbot.jpg' %}"
-               alt="Hello dear" >            
-       </div></section>
-
-       <section class="gauche2">
-
-           <button class="btn-first b1">Signup</button>
-           <button class="btn-first b2">Login</button></section>
-
-       <section class="droite2">
-
-           <button class="btn-first b2">Let's Chat</button> </section>
-
-   </section>
-</main>
+    </section>
+</div>
 {% endblock content %}
