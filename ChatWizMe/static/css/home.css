@@ -1,65 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Permanent+Marker&family=Roboto&family=Satisfy&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    min-height: 100vh;
+.home{
     display: flex;
-    flex-direction: column;
-}
-
-main{
+    flex-direction: row;
+    width: 100%;
     flex-grow: 1;
 }
 
-/* HEADER */
-
-.header{
-    background-color: #FF7300;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    background: rgb(227,231,5);
-    background: linear-gradient(90deg, rgba(227,231,5,1) 0%, rgba(255,118,0,1) 30%, rgba(255,115,0,1) 70%, rgba(227,231,5,1) 100%); 
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    padding: 2rem;
 }
 
-.header_title{
-    font-size: 5rem;
-    font-family: "Satisfy";
-    color: white;
-    text-shadow: 3px 3px 3px black
+.top{
+    border: 5px solid #0B3142;
+    border-radius: 15px;
+    padding: 2rem;
+    background-color: aliceblue;
+    margin-bottom: 1rem;
 }
 
-.header_subtitle{
-    font-family: 'Satisfy';
-    font-size: 2rem;
+.paragraph{
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    color: #0B3142;
 }
 
-/* FOOTER */
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    padding: 2rem;
+}
 
-footer{
+.img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.image{
+    display: block;
+    height: 470px;
+    width: 600px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    position: relative;
+}
+
+.button{
+    font-size: 1.5rem;
+    border: none;
+    padding: .75rem 1.5rem;
     background-color: #ff7300;
     color: white;
-    font-size: 1.2rem;
+    border: 2px solid white;
+    border-radius: 1.5rem;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #ff7300;
+    border: 2px solid #FF7300;
+}
+
+.start{
+    font-size: 2.5rem;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    background-color: #0B3142;
+    color: white;
     font-weight: bold;
-    padding: 1.2rem;
-    display: flex;
-    justify-content: flex-end;
+    border: 2px solid white;
+    text-decoration: none;
+    width: min-content;
+    white-space: nowrap;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 2.5rem;
 }
 
-.footer_text{
-    margin-right: 1rem;
+.start:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #0B3142;
+    border: 2px solid #0B3142;
 }
 
-.footer_img{
+
+.signup_advice{
+    font-size: 1.5rem; 
+    font-weight: bold;
+    font-family: 'Roboto';
+    color: #FF7300;
 }
-
-cite {
-
-}
-/* test */
-
