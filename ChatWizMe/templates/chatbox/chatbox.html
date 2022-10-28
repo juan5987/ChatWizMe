@@ -1,5 +1,39 @@
 {% extends 'base.html' %}
-
+{% load widget_tweaks %}
 {% block content %}
-<h1>Chatbox</h1>
+
+<div class="chatbox">
+    <div class="chatbox_block">
+        <h1 class="chatbox_title">Chatbox</h1>
+
+    <div class="chatbox_container">
+        {% for message in messages  %}
+            {% for key, value in message.items %}
+                {% if  key%}
+                    <div class="chatbox_message_container_left">
+                        <span class="chatbox_message user-msg">{{key}}
+                            <span class="chatbox_message_time">{{time}}</span>
+                        </span>
+                    </div>
+                {% endif %}
+                {% if value %}
+                    <div class="chatbox_message_container_right">
+                        <span class="chatbox_message bot-msg">{{value|linebreaks }}
+                            <span class="chatbox_message_time">{{time}}</span>
+                        </span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="form">
+        {% csrf_token %}
+        <div class="chatbox_bottom">
+            {{form.text_msg|add_class:"chatbox_input"|attr:"placeholder: type your text here..."}}
+            <button type="submit" class="chatbox_submit">Submit</button>
+        </div>
+    </form>
+    </div>
+</div>
 {% endblock content %}
