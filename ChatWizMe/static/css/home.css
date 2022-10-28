@@ -1,0 +1,106 @@
+.home{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    padding: 2rem;
+}
+
+.top{
+    border: 5px solid #0B3142;
+    border-radius: 15px;
+    padding: 2rem;
+    background-color: aliceblue;
+    margin-bottom: 1rem;
+}
+
+.paragraph{
+    font-family: "Roboto";
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    color: #0B3142;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    padding: 2rem;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.image{
+    display: block;
+    height: 470px;
+    width: 600px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    position: relative;
+}
+
+.button{
+    font-size: 1.5rem;
+    border: none;
+    padding: .75rem 1.5rem;
+    background-color: #ff7300;
+    color: white;
+    border: 2px solid white;
+    border-radius: 1.5rem;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #ff7300;
+    border: 2px solid #FF7300;
+}
+
+.start{
+    font-size: 2.5rem;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    background-color: #0B3142;
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    text-decoration: none;
+    width: min-content;
+    white-space: nowrap;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 2.5rem;
+}
+
+.start:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #0B3142;
+    border: 2px solid #0B3142;
+}
+
+
+.signup_advice{
+    font-size: 1.5rem; 
+    font-weight: bold;
+    font-family: 'Roboto';
+    color: #FF7300;
+}
