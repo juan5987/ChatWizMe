@@ -14,7 +14,9 @@ messages = []
 def chatbox(request):
     form = forms.InputForm(request.POST or None)
     user_msg = None     
-    logged_in_user = request.user   
+    logged_in_user = request.user
+    
+    
     
     if form.is_valid() :
         user_msg = form.cleaned_data['text_msg']
@@ -79,6 +81,7 @@ def chatbox(request):
         if str(logged_in_user) != "AnonymousUser":
             messages.clear()
             messages.append({"": f"Hello {logged_in_user}, how are you doing today ?"})
-            
+        else:
+            messages.clear()
         return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'user_name': logged_in_user})
 
