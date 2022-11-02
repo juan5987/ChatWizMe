@@ -37,7 +37,7 @@ main{
 }
 
 .header_title{
-    font-size: 4rem;
+    font-size: 5rem;
     font-family: "Satisfy";
     color: white;
     text-shadow: 3px 3px 3px black;
@@ -72,8 +72,28 @@ footer{
     border: 2px solid white;
     border-radius: 2rem;
     font-family: 'Roboto';
+    text-decoration: none;
 }
 .logout:hover{
+    cursor: pointer;
+    background-color: #FF7300;
+}
+
+.go_back{
+    position: absolute;
+    left: 3rem;
+    top: 2.5rem;
+    font-size: 1.5rem;
+    background-color: #0B3142;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 2rem;
+    font-family: 'Roboto';
+    text-decoration: none;
+}
+
+.go_back:hover{
     cursor: pointer;
     background-color: #FF7300;
 }
