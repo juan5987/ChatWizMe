@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 import openai
 from dotenv import load_dotenv
+from .utils import call_api
 
 load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -41,19 +42,9 @@ def chatbox(request):
             form.save()
             form = forms.InputForm()
             time = datetime.today().strftime('%H:%M')
-            response = openai.Completion.create(
-                    model="text-davinci-002",
-                    prompt=f"Correct this to standard English:{user_msg}",
-                    temperature=0,
-                    max_tokens=60,
-                    top_p=1.0,
-                    frequency_penalty=0.0,
-                    presence_penalty=0.0
-                    )
-            
+            response = call_api(user_msg)
             normalized_user_message = user_msg.replace(" ", "").replace(",", "").replace(".", "").lower()
-            normalized_bot_message = response['choices'][0]['text'].replace(" ", "").replace(",", "").replace(".", "").lower()[2:]
-            print(normalized_user_message, normalized_bot_message)
+            normalized_bot_message = response.replace(" ", "").replace(",", "").replace(".", "").lower()[2:]
             form = forms.InputForm()
             
             if normalized_user_message == normalized_bot_message:
@@ -73,7 +64,7 @@ def chatbox(request):
 
             else:
                 messages.append({"" : "Your sentence is incorrect. It should be as follow:"})
-                messages.append({"" : response['choices'][0]['text']})
+                messages.append({"" : response})
                 messages.append({"" : "Try to write it again to improve your skill."})
                 return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
 

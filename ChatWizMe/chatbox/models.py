@@ -1,6 +1,4 @@
-from xml.dom.minidom import Attr
 from django.db import models
-from django import forms
 
 class InputModel(models.Model):
     text_msg = models.TextField(
