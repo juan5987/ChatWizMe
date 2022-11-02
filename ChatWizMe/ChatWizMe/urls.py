@@ -23,5 +23,4 @@ urlpatterns = [
     path('rapport/', include('rapport.urls')),
     path('', include('auth2.urls')),
     path('auth2/', include('django.contrib.auth.urls')),
-
 ]

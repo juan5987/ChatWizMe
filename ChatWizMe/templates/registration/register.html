@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="auth_form">
+    <h2 class="auth_title">Join us today</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form_container">
+            <label for={{form.username.id_for_label}} class="form_label">username</label>
+            {{form.username|add_class:"form_input"}}
+            <div class="form_helptext">{{form.username.help_text}}</div>
+            <label class="form_label">email</label>
+            {{form.email|add_class:"form_input"}}
+            <label class="form_label">password</label>
+            {{form.password1|add_class:"form_input"}}
+            <div class="form_helptext">{{form.password1.help_text}}</div>
+            <label class="form_label">confirm password</label>
+            {{form.password2|add_class:"form_input"}}
+            <div class="form_helptext">{{form.password2.help_text}}</div>
+        </div>
+        {% if form.errors %}
+            {% for field in form %}
+
+                {% for error in field.errors %}
+                <div class="auth_error">
+                    {{field.label}}: {{ error|escape }}
+                </div>
+                {% endfor %}
+
+            {% endfor %}
+        {% endif %}
+        <button class="auth_submit" type="submit">
+            Sign Up
+        </button>
+    </form>
+    <div class="form_bottom">
+        <span class="form_bottom_text">Already Have An Account?</span>
+        <a class="form_bottom_link" href="{% url 'login' %}">
+            Sign In
+        </a>
+    </div>
+</div>
+{% endblock content %}
