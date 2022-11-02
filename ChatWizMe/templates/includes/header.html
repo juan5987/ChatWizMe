@@ -1,4 +1,10 @@
 <header class="header">
-    <h1 class="header_title">ChatWizMe</h1>
+    {% if not showGoBackButton %}
+        <a href="/" class="go_back">Back to home</a>
+    {% endif %}
+    <h1 class="header_title"><a class="header_link" href="/">ChatWizMe</a></h1>
     <h2 class="header_subtitle">" Improve your english chatting with a bot "</h2>
+    {% if user.is_authenticated %}
+        <a href="/logout/" class="logout">Log out</a>
+    {% endif %}
 </header>
