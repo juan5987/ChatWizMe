@@ -11,6 +11,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 openai.api_key = SECRET_KEY
 
 messages = []
+user_prompt = ""
 
 def chatbox(request):
     form = forms.InputForm(request.POST or None)
@@ -27,16 +28,19 @@ def chatbox(request):
         messages.append({user_msg : ""})
         form = forms.InputForm()
         time = datetime.today().strftime('%H:%M')
+        
         response = call_api(user_msg)
+        
         normalized_user_message = user_msg.replace(" ", "").replace(",", "").replace(".", "").lower()
         normalized_bot_message = response.replace(" ", "").replace(",", "").replace(".", "").lower()[2:]
         form = forms.InputForm()
         
         if normalized_user_message == normalized_bot_message:
-                
+            global user_prompt
+            user_prompt += f"You: {user_msg}\nFriend:"
             response = openai.Completion.create(
                 model="text-davinci-002",
-                prompt=f"You: {user_msg}\nFriend:",
+                prompt=user_prompt,
                 temperature=0.5,
                 max_tokens=600,
                 top_p=1.0,
@@ -45,6 +49,8 @@ def chatbox(request):
                 stop=["You:"]
                 )
             messages.append({'': response['choices'][0]['text']})
+            user_prompt += response['choices'][0]['text']
+            print(user_prompt)
             return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
 
         else:
