@@ -18,7 +18,6 @@ def chatbox(request):
     user_msg = None     
     logged_in_user = request.user
     
-    
     # my_form = form.save(commit=False)
     # my_form.user= request.user
     # my_form.save()
@@ -50,7 +49,6 @@ def chatbox(request):
                 )
             messages.append({'': response['choices'][0]['text']})
             user_prompt += response['choices'][0]['text']
-            print(user_prompt)
             return render(request, "chatbox/chatbox.html", {'form': form, 'messages':messages, 'time': time})
 
         else:
