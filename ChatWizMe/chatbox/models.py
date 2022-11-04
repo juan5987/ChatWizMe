@@ -8,4 +8,3 @@ class InputModel(models.Model):
         null = True,
         default= "",
     )
-    # user = models.ForeignKey(User, on_delete = models.CASCADE)

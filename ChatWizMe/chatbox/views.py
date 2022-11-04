@@ -18,10 +18,6 @@ def chatbox(request):
     user_msg = None     
     logged_in_user = request.user
     
-    # my_form = form.save(commit=False)
-    # my_form.user= request.user
-    # my_form.save()
-    
     if form.is_valid() :
         user_msg = form.cleaned_data['text_msg']     
         messages.append({user_msg : ""})
